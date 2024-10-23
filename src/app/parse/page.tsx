@@ -2,8 +2,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-type Props = {};
-
 interface ParsedData {
   id: number;
   inputUserAgent: string;
@@ -16,7 +14,7 @@ interface ParsedData {
   deviceFamily: string;
 }
 
-const ParsePage = (props: Props) => {
+const ParsePage = () => {
   const [userAgent, setUserAgent] = useState<string>("");
   const [parsedData, setParsedData] = useState<ParsedData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -40,6 +38,7 @@ const ParsePage = (props: Props) => {
       setLoading(false);
     } catch (err) {
       setError("Failed to parse User-Agent.");
+      console.log(err);
       setLoading(false);
     }
   };
@@ -72,7 +71,7 @@ const ParsePage = (props: Props) => {
           id="userAgent"
           type="text"
           value={userAgent}
-          onChange={(e) => setUserAgent(e.target.value)}
+          onChange={handleInputChange}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-4 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Mozilla/5.0..."
           required

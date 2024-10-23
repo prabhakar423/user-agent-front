@@ -1,21 +1,20 @@
+import Link from "next/link";
 import React from "react";
 
-type Props = {};
-
-const CustomNavbar = (props: Props) => {
+const CustomNavbar = () => {
   return (
     <nav className="bg-blue-600 p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <a href="/" className="text-white text-2xl font-bold">
+        <Link href="/" className="text-white text-2xl font-bold">
           Jobmela.info
-        </a>
+        </Link>
         <div className="text-white">
-          <a href="#" className="mr-4 hover:text-gray-300">
+          <Link href="#" className="mr-4 hover:text-gray-300">
             Home
-          </a>
-          <a href="#" className="hover:text-gray-300">
+          </Link>
+          <Link href="#" className="hover:text-gray-300">
             About
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

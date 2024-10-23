@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const CustomFooter = (props: Props) => {
+const CustomFooter = () => {
   return (
     <div>
       <footer className="bg-blue-600 p-4">
