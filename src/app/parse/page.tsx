@@ -28,7 +28,7 @@ const ParsePage = () => {
     try {
       // Make the API request to parse the user agent (replace with your API endpoint)
       const response = await axios.get<ParsedData>(
-        "http://localhost:8080/user-agent",
+        "https://api.jobmela.info/user-agent",
         {
           params: { userAgent: userAgent },
         }
